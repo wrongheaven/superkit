@@ -3,7 +3,7 @@ package handlers
 import (
 	"AABBCCDD/app/views/landing"
 
-	"github.com/anthdm/superkit/kit"
+	"github.com/wrongheaven/superkit/kit"
 )
 
 func HandleLandingIndex(kit *kit.Kit) error {

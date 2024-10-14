@@ -1,7 +1,7 @@
 package button
 
 import (
-	"github.com/anthdm/superkit/ui"
+	"github.com/wrongheaven/superkit/ui"
 
 	"github.com/a-h/templ"
 )

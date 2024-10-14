@@ -1,11 +1,10 @@
 package auth
 
 import (
-	v "github.com/anthdm/superkit/validate"
-	"AABBCCDD/app/views/layouts"
 	"AABBCCDD/app/views/components"
-
+	"AABBCCDD/app/views/layouts"
 	"fmt"
+	v "github.com/wrongheaven/superkit/validate"
 )
 
 type SignupIndexPageData struct {
@@ -26,10 +25,10 @@ templ SignupIndex(data SignupIndexPageData) {
 		<div class="fixed top-6 right-6">
 			@components.ThemeSwitcher()
 		</div>
-		<div class="w-full justify-center">
+		<div class="justify-center w-full">
 			<div class="mt-10 lg:mt-20">
-				<div class="max-w-md mx-auto border rounded-md shadow-sm py-12 px-6 flex flex-col gap-8">
-					<h2 class="text-center text-2xl font-medium">Signup</h2>
+				<div class="flex flex-col max-w-md gap-8 px-6 py-12 mx-auto border rounded-md shadow-sm">
+					<h2 class="text-2xl font-medium text-center">Signup</h2>
 					@SignupForm(data.FormValues, data.FormErrors)
 				</div>
 			</div>
@@ -43,7 +42,7 @@ templ SignupForm(values SignupFormValues, errors v.Errors) {
 			<label for="email">Email *</label>
 			<input { inputAttrs(errors.Has("email"))... } name="email" id="email" value={ values.Email }/>
 			if errors.Has("email") {
-				<div class="text-red-500 text-xs">{ errors.Get("email")[0] }</div>
+				<div class="text-xs text-red-500">{ errors.Get("email")[0] }</div>
 			}
 		</div>
 		<div class="flex flex-col gap-1">
@@ -52,7 +51,7 @@ templ SignupForm(values SignupFormValues, errors v.Errors) {
 			if errors.Has("fistName") {
 				<ul>
 					for _, err := range errors.Get("firstName") {
-						<li class="text-red-500 text-xs">{ err }</li>
+						<li class="text-xs text-red-500">{ err }</li>
 					}
 				</ul>
 			}
@@ -63,7 +62,7 @@ templ SignupForm(values SignupFormValues, errors v.Errors) {
 			if errors.Has("lastName") {
 				<ul>
 					for _, err := range errors.Get("lastName") {
-						<li class="text-red-500 text-xs">{ err }</li>
+						<li class="text-xs text-red-500">{ err }</li>
 					}
 				</ul>
 			}
@@ -74,7 +73,7 @@ templ SignupForm(values SignupFormValues, errors v.Errors) {
 			if errors.Has("password") {
 				<ul>
 					for _, err := range errors.Get("password") {
-						<li class="text-red-500 text-xs">{ err }</li>
+						<li class="text-xs text-red-500">{ err }</li>
 					}
 				</ul>
 			}
@@ -83,7 +82,7 @@ templ SignupForm(values SignupFormValues, errors v.Errors) {
 			<label for="passwordConfirm">Confirm Password *</label>
 			<input { inputAttrs(errors.Has("passwordConfirm"))... } type="password" name="passwordConfirm" id="passwordConfirm"/>
 			if errors.Has("passwordConfirm") {
-				<div class="text-red-500 text-xs">{ errors.Get("passwordConfirm")[0] }</div>
+				<div class="text-xs text-red-500">{ errors.Get("passwordConfirm")[0] }</div>
 			}
 		</div>
 		<button { buttonAttrs()... }>
@@ -96,7 +95,7 @@ templ SignupForm(values SignupFormValues, errors v.Errors) {
 templ ConfirmEmail(user User) {
 	<form hx-post="/resend-email-verification" class="flex flex-col gap-4 text-sm">
 		<input type="hidden" name="userID" value={ fmt.Sprint(user.ID) }/>
-		<div>An email confirmation link has been sent to: <span class="underline font-medium">{ user.Email }</span></div>
-		<div>Trouble receiving the verification code? <button class="underline font-medium cursor-pointer">Resend verification code</button></div>
+		<div>An email confirmation link has been sent to: <span class="font-medium underline">{ user.Email }</span></div>
+		<div>Trouble receiving the verification code? <button class="font-medium underline cursor-pointer">Resend verification code</button></div>
 	</form>
 }

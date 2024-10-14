@@ -6,30 +6,30 @@ Build high-performance apps swiftly with minimal team resources in Go programmin
 
 ## Table of content
 
-- [SUPERKIT](#superkit)
-  - [Table of content](#table-of-content)
-- [Installation](#installation)
-- [Getting started](#getting-started)
-  - [Application structure](#application-structure)
-    - [assets](#assets)
-    - [conf](#conf)
-    - [db](#db)
-    - [events](#events)
-    - [handlers](#handlers)
-    - [types](#types)
-    - [views](#views)
-  - [Development server](#development-server)
-  - [Hot reloading the browser](#hot-reloading-the-browser)
-- [Migrations](#migrations)
-  - [Create a new migration](#create-a-new-migration)
-  - [Migrate the database](#migrate-the-database)
-  - [Reset the database](#reset-the-database)
-  - [Seeds](#seeds)
-- [Creating views with Templ](#creating-views-with-templ)
-- [Validations](#validations)
-- [Testing](#testing)
-  - [Testing handlers](#testing-handlers)
-- [Create a production release](#create-a-production-release)
+-   [SUPERKIT](#superkit)
+    -   [Table of content](#table-of-content)
+-   [Installation](#installation)
+-   [Getting started](#getting-started)
+    -   [Application structure](#application-structure)
+        -   [assets](#assets)
+        -   [conf](#conf)
+        -   [db](#db)
+        -   [events](#events)
+        -   [handlers](#handlers)
+        -   [types](#types)
+        -   [views](#views)
+    -   [Development server](#development-server)
+    -   [Hot reloading the browser](#hot-reloading-the-browser)
+-   [Migrations](#migrations)
+    -   [Create a new migration](#create-a-new-migration)
+    -   [Migrate the database](#migrate-the-database)
+    -   [Reset the database](#reset-the-database)
+    -   [Seeds](#seeds)
+-   [Creating views with Templ](#creating-views-with-templ)
+-   [Validations](#validations)
+-   [Testing](#testing)
+    -   [Testing handlers](#testing-handlers)
+-   [Create a production release](#create-a-production-release)
 
 ## Installation
 
@@ -37,7 +37,7 @@ To create a new **SUPERKIT** project, you can run the following command:
 
 ```bash
 # Create your SUPERKIT project in a single command:
-go run github.com/anthdm/superkit@master [yourprojectname]
+go run github.com/wrongheaven/superkit@main [yourprojectname]
 
 # You can now navigate to your project:
 cd [myprojectname]
@@ -46,10 +46,10 @@ cd [myprojectname]
 npm install
 
 # If you run into dependency issues you can run:
-go clean -modcache && go get -u ./...  
+go clean -modcache && go get -u ./...
 
 # If you have the authentication plugin enabled you need to migrate your database.
-make db-up 
+make db-up
 ```
 
 ## Getting started
@@ -64,7 +64,7 @@ The **SUPERKIT** project structure is designed to be simple and easy to understa
 │     ├──  assets
 │     ├──  conf
 │     ├──  db
-│       ├── migrations 
+│       ├── migrations
 │     ├──  events
 │     ├──  handlers
 │     ├──  types
@@ -89,7 +89,7 @@ The **SUPERKIT** project structure is designed to be simple and easy to understa
 │   ├── package.json
 │   ├── tailwind.config.js
 ├── db
-├── event 
+├── event
 ├── kit
 │   ├── middleware
 ├── validate
@@ -169,7 +169,7 @@ views
 You can run the development server with the following command:
 
 ```bash
-make dev 
+make dev
 ```
 
 ## Hot reloading the browser
@@ -229,7 +229,7 @@ superkit will compile your whole application including its assets into a single 
 make build
 ```
 
-This will create a binary file located at  `/bin/app_prod`.
+This will create a binary file located at `/bin/app_prod`.
 
 Make sure you also set the correct application environment variable in your `.env` file.
 

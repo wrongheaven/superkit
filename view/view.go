@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/anthdm/superkit/kit"
-	"github.com/anthdm/superkit/kit/middleware"
+	"github.com/wrongheaven/superkit/kit"
+	"github.com/wrongheaven/superkit/kit/middleware"
 )
 
 // Asset is a view helper that returns the full asset path as a

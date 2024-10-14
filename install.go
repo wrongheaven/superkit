@@ -16,7 +16,7 @@ import (
 const (
 	replaceID           = "AABBCCDD"
 	bootstrapFolderName = "bootstrap"
-	reponame            = "https://github.com/anthdm/superkit.git"
+	reponame            = "https://github.com/wrongheaven/superkit.git"
 )
 
 func main() {

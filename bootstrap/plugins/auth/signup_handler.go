@@ -8,10 +8,10 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/anthdm/superkit/event"
-	"github.com/anthdm/superkit/kit"
-	v "github.com/anthdm/superkit/validate"
 	"github.com/golang-jwt/jwt/v5"
+	"github.com/wrongheaven/superkit/event"
+	"github.com/wrongheaven/superkit/kit"
+	v "github.com/wrongheaven/superkit/validate"
 )
 
 var signupSchema = v.Schema{

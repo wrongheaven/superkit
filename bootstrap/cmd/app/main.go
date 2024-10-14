@@ -8,9 +8,9 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/anthdm/superkit/kit"
 	"github.com/go-chi/chi/v5"
 	"github.com/joho/godotenv"
+	"github.com/wrongheaven/superkit/kit"
 )
 
 func main() {

@@ -4,7 +4,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/anthdm/superkit/db"
+	"github.com/wrongheaven/superkit/db"
 
 	_ "github.com/mattn/go-sqlite3"
 
